@@ -1,0 +1,6 @@
+{
+  "printWidth": 6400,
+  "singleAttributePerLine": false,
+  "htmlWhitespaceSensitivity": "css",
+  "embeddedLanguageFormatting": "off"
+}
