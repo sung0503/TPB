@@ -285,7 +285,7 @@
         <div class="container is-max-desktop">
           <div class="has-text-centered">
             <h2 class="title is-3">Shot Gains That Survive Transfer</h2>
-            <p class="section-lead">On the OpenAI CLIP ViT-B/32 source model, TPB gains 5.80 pp from one to sixteen shots. When the corresponding prompt ensembles are re-embedded without target tuning, shot-driven gains of 2.41 pp on five ViT-L targets and 2.51 pp on four ViT-H targets remain.</p>
+            <p class="section-lead">On the OpenAI CLIP ViT-B/32 source model, TPB gains 5.80 pp from one to sixteen shots. When the prompt ensembles are transferred to other VLMs without additional tuning, shot-driven gains of 2.41 pp on five ViT-L targets and 2.51 pp on four ViT-H targets remain.</p>
           </div>
 
           <div class="metric-strip" aria-label="Key results">
@@ -471,7 +471,7 @@
         <div class="container is-max-desktop">
           <div class="has-text-centered">
             <h2 class="title is-3">How Text Prompt Boosting Works</h2>
-            <p class="section-lead">At each boosting round, GPC constructs a class-wise prompt-bank classifier under the current sample weights. Misclassified images receive more weight, directing the next round toward unresolved cases; SAMME.R combines all rounds into the final ensemble.</p>
+            <p class="section-lead">At each boosting round, GPC constructs a class-wise prompt-bank classifier under the current sample weights. Misclassified images receive more weight, directing the next round toward unresolved cases; all rounds are combined into the final ensemble.</p>
           </div>
 
           <div class="key-idea-grid">
@@ -488,7 +488,7 @@
             <article class="key-idea-card">
               <span class="idea-step">3</span>
               <h3>Combine the Prompt Classifiers</h3>
-              <p>After <em>M</em> rounds, SAMME.R aggregates the class-confidence outputs of all prompt-bank classifiers into one final prediction.</p>
+              <p>After <em>M</em> rounds, the class-confidence outputs of all prompt-bank classifiers are aggregated into one final prediction.</p>
             </article>
           </div>
 
@@ -522,7 +522,7 @@
                 </li>
                 <li>
                   <span>2</span>
-                  <p>SAMME.R increases this image's weight for the next round.</p>
+                  <p>This image receives more weight for the next round.</p>
                 </li>
                 <li>
                   <span>3</span>
