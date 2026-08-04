@@ -244,14 +244,14 @@
         <div class="container is-max-desktop">
           <div class="has-text-centered">
             <h2 class="title is-3">TL;DR</h2>
-            <p class="section-lead">Natural-language prompts transfer across heterogeneous VLMs, but high-performing few-shot text-prompting methods tend to saturate as shots increase. TPB turns prompt construction into a boosting loop: each round focuses on examples the current ensemble still misses. The resulting prompt ensemble scales with supervision on the source model, and its shot-driven gains persist when re-embedded in other VLMs.</p>
+            <p class="section-lead">Natural-language prompts transfer across heterogeneous VLMs, but existing text-prompting methods tend to saturate as shots increase. TPB turns prompt construction into a boosting loop: each round focuses on examples the current ensemble still misses. The resulting prompt ensemble scales with supervision on the source model, and its shot-driven gains persist when transferred to other VLMs.</p>
           </div>
 
           <div class="capability-grid" role="list" aria-label="Comparison of prompt adaptation paradigms">
             <article class="capability-item" role="listitem">
               <p class="capability-kicker">Soft prompt learning</p>
-              <h3>Scales, but stays model-specific</h3>
-              <p>Additional supervision directly adapts continuous vectors, but those vectors live in the source model's representation space.</p>
+              <h3>Benefits from more shots, but remains model-specific</h3>
+              <p>Soft prompts improve with additional labeled examples, but remain tied to the VLM on which they were trained.</p>
               <ul class="capability-list">
                 <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Benefits from additional shots</li>
                 <li class="is-negative"><i class="fas fa-times" aria-hidden="true"></i> Direct cross-model reuse</li>
@@ -260,8 +260,8 @@
 
             <article class="capability-item" role="listitem">
               <p class="capability-kicker">Prior text prompting</p>
-              <h3>Transfers, but tends to saturate</h3>
-              <p>Natural-language prompts can be re-embedded across heterogeneous VLMs, but prior construction objectives do not explicitly revisit misclassified examples.</p>
+              <h3>Transfers across VLMs, but gains little from more shots</h3>
+              <p>Existing text-prompting methods can be transferred to other VLMs, but their performance tends to saturate as more labeled examples are added.</p>
               <ul class="capability-list">
                 <li class="is-neutral"><i class="fas fa-minus" aria-hidden="true"></i> Limited gains from more shots</li>
                 <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Direct cross-model reuse</li>
@@ -270,8 +270,8 @@
 
             <article class="capability-item" role="listitem">
               <p class="capability-kicker">Text Prompt Boosting</p>
-              <h3>Scales, and its gains survive transfer</h3>
-              <p>AdaBoost-style reweighting makes unresolved errors more influential when constructing the next natural-language prompt classifier.</p>
+              <h3>Benefits from more shots and transfers across VLMs</h3>
+              <p>TPB improves with additional labeled examples on the source VLM and retains those gains when transferred to other VLMs.</p>
               <ul class="capability-list">
                 <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Benefits from additional shots</li>
                 <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Direct cross-model reuse</li>
