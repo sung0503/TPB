@@ -287,7 +287,7 @@ section,
   line-height: 1.2;
 }
 
-.oral-label {
+.spotlight-label {
   margin-left: 0.65rem;
   padding-left: 0.65rem;
   border-left: 2px solid var(--danger-color);
@@ -1542,7 +1542,7 @@ code {
     font-size: 0.95rem;
   }
 
-  .oral-label {
+  .spotlight-label {
     margin-left: 0.5rem;
     padding-left: 0.5rem;
   }
