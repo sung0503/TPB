@@ -1634,6 +1634,18 @@ code {
 }
 
 @media screen and (max-width: 480px) {
+  .publication-links {
+    gap: 0.75rem;
+  }
+
+  .publication-links .link-block {
+    margin-bottom: 0;
+  }
+
+  .publication-links .button {
+    margin: 0 !important;
+  }
+
   .publication-title {
     font-size: 2rem !important;
   }
@@ -1700,7 +1712,6 @@ code {
 
   .link-block {
     display: block;
-    margin-bottom: 0.5rem;
   }
 
   .button {
