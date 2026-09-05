@@ -226,7 +226,7 @@
                     </a>
                   </span>
                   <span class="link-block">
-                    <a class="external-link button is-normal is-rounded is-dark is-disabled-link" aria-disabled="true" tabindex="-1" title="Poster will be added soon">
+                    <a href="TPB_poster_final.pdf" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark" title="Open the ECCV 2026 poster">
                       <span class="icon"><i class="fas fa-image"></i></span>
                       <span>Poster</span>
                     </a>
@@ -242,37 +242,37 @@
         <div class="container is-max-desktop">
           <div class="has-text-centered">
             <h2 class="title is-3">TL;DR</h2>
-            <p class="section-lead">Natural-language prompts transfer across heterogeneous VLMs, but existing text-prompting methods tend to saturate as shots increase. TPB turns prompt construction into a boosting loop: each round focuses on examples the current ensemble still misses. The resulting prompt ensemble scales with supervision on the source model, and its shot-driven gains persist when transferred to other VLMs.</p>
+            <p class="section-lead">Soft prompts scale with more shots but remain tied to a single VLM. Hard text prompts transfer across models, but their gains quickly saturate. TPB combines both advantages: it gains <strong>+5.80 pp</strong> from 1 to 16 shots on the source model and preserves <strong>+2.41 pp / +2.51 pp</strong> gains after transfer to ViT-L / ViT-H models.</p>
           </div>
 
           <div class="capability-grid" role="list" aria-label="Comparison of prompt adaptation paradigms">
             <article class="capability-item" role="listitem">
-              <p class="capability-kicker">Soft prompt learning</p>
-              <h3>Benefits from more shots, but remains model-specific</h3>
-              <p>Soft prompts improve with additional labeled examples, but remain tied to the VLM on which they were trained.</p>
+              <p class="capability-kicker">Soft prompting</p>
+              <h3>Scales with shots, tied to one model</h3>
+              <p>More labeled examples help, but the learned prompts cannot be transferred directly to another VLM.</p>
               <ul class="capability-list">
-                <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Benefits from additional shots</li>
-                <li class="is-negative"><i class="fas fa-times" aria-hidden="true"></i> Direct cross-model reuse</li>
+                <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Shot-scalable adaptation</li>
+                <li class="is-negative"><i class="fas fa-times" aria-hidden="true"></i> Direct cross-model transfer</li>
               </ul>
             </article>
 
             <article class="capability-item" role="listitem">
-              <p class="capability-kicker">Prior text prompting</p>
-              <h3>Transfers across VLMs, but gains little from more shots</h3>
-              <p>Existing text-prompting methods can be transferred to other VLMs, but their performance tends to saturate as more labeled examples are added.</p>
+              <p class="capability-kicker">Hard prompting</p>
+              <h3>Transfers across models, saturates with shots</h3>
+              <p>Natural-language prompts work across VLMs, but existing methods gain little from additional shots.</p>
               <ul class="capability-list">
-                <li class="is-neutral"><i class="fas fa-minus" aria-hidden="true"></i> Limited gains from more shots</li>
-                <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Direct cross-model reuse</li>
+                <li class="is-neutral"><i class="fas fa-minus" aria-hidden="true"></i> Limited shot scalability</li>
+                <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Direct cross-model transfer</li>
               </ul>
             </article>
 
             <article class="capability-item" role="listitem">
               <p class="capability-kicker">Text Prompt Boosting</p>
-              <h3>Benefits from more shots and transfers across VLMs</h3>
-              <p>TPB improves with additional labeled examples on the source VLM and retains those gains when transferred to other VLMs.</p>
+              <h3>Scales with shots and transfers</h3>
+              <p>TPB reweights hard examples and combines weak text-prompt classifiers into a strong ensemble.</p>
               <ul class="capability-list">
-                <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Benefits from additional shots</li>
-                <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Direct cross-model reuse</li>
+                <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Shot-scalable adaptation</li>
+                <li class="is-positive"><i class="fas fa-check" aria-hidden="true"></i> Direct cross-model transfer</li>
               </ul>
             </article>
           </div>
@@ -423,7 +423,7 @@
                 <div class="full-table-stack">
                   <figure class="project-figure table-figure appendix-table-figure">
                     <a href="static/images/appendix-source-rn50.svg" target="_blank" title="Open the full-resolution RN50 source-model table">
-                      <img src="static/images/appendix-source-rn50.svg" alt="Full appendix table of dataset-wise shot scalability on OpenAI CLIP RN50" width="587" height="245" loading="lazy" decoding="async" />
+                      <img src="static/images/appendix-source-rn50.svg" alt="Corrected full appendix table of dataset-wise shot scalability on OpenAI CLIP RN50" width="587" height="245" loading="lazy" decoding="async" />
                     </a>
                     <figcaption>OpenAI CLIP RN50 source model.</figcaption>
                   </figure>
